@@ -24,7 +24,7 @@ def main():
     # ピンを入力に設定(プルアップ設定)
     factory = PiGPIOFactory()
     magnet = Button(PIN_MAGNET, pull_up=True, bounce_time=3, pin_factory=factory) #最初の変更があってから、状態の変更を無視する時間をbounce_timeで秒単位で指定
-    vibration = 
+    vibration = vib.Vibration()
 
     def stick():
 
