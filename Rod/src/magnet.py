@@ -7,18 +7,8 @@ import time
 
 # SENSOR PIN
 PIN_MAGNET = 21
-PIN_VIBRATION = 18
 # GPIOモードを設定
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(PIN_VIBRATION, GPIO.OUT)
-
-# モーターをオンにする関数
-def motor_on():
-    GPIO.output(PIN_VIBRATION, GPIO.HIGH)
-
-# モーターをオフにする関数
-def motor_off():
-    GPIO.output(PIN_VIBRATION, GPIO.LOW)
 
 def main():
     # ピンを入力に設定(プルアップ設定)
@@ -27,11 +17,11 @@ def main():
     vibration = vib.Vibration()
 
     def stick():
-
+        vibration.motor_on
         print("magnets stick")
 
     def leave():
-
+        vibration.motor_off
         print("magnets leave")
 
     magnet.when_pressed = stick
